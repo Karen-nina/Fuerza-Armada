@@ -7,9 +7,6 @@ import org.junit.Test;
 import ar.edu.unlam.dominio.Batalla;
 import ar.edu.unlam.dominio.FuerzaArmada;
 import ar.edu.unlam.dominio.TipoDeBatalla;
-import ar.edu.unlam.exceptiones.BatallaInexistenteException;
-import ar.edu.unlam.exceptiones.VehiculoIncompatible;
-import ar.edu.unlam.exceptiones.VehiculoInexistente;
 import ar.edu.unlam.interfaces.Acuatico;
 import ar.edu.unlam.interfaces.Terrestre;
 import ar.edu.unlam.interfaces.Volador;
@@ -22,7 +19,8 @@ import ar.edu.unlam.vehiculos.Portaviones;
 import ar.edu.unlam.vehiculos.Submarino;
 import ar.edu.unlam.vehiculos.Tanque;
 import ar.edu.unlam.vehiculos.Vehiculo;
-
+import ar.edu.unlam.exceptiones;
+import ar.edu.unlam.exceptiones.VehiculoInexistente;
 
 public class TestBatalla {
 
@@ -193,7 +191,7 @@ public class TestBatalla {
 	}
 */
 	@Test (expected = VehiculoIncompatible.class)
-	public void queSeNoSePuedaEnviarAUnaBatallaEnTierraUnBarco() throws VehiculoInexistente, VehiculoIncompatible, BatallaInexistenteException {
+	public void queSeNoSePuedaEnviarAUnaBatallaEnTierraUnBarco() throws Exception {
 		FuerzaArmada argentina = new FuerzaArmada();
 
 		argentina.agregarVehiculoAFuerzasArmadas(new Tanque("5", "Renault FT"));
